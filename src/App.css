@@ -1,0 +1,236 @@
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Bubble animations */
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: floatUp 15s linear infinite;
+}
+
+.bubble:nth-child(1) {
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+}
+.bubble:nth-child(2) {
+  left: 30%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 4s;
+}
+.bubble:nth-child(3) {
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 2s;
+}
+.bubble:nth-child(4) {
+  left: 70%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 6s;
+}
+.bubble:nth-child(5) {
+  left: 90%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 1s;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-1000px); opacity: 0; }
+}
+
+/* Container and quote box */
+.container {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.quote-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 50px 40px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.quote-box::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.15), transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+  z-index: 0;
+  animation: shine 6s infinite linear;
+}
+
+@keyframes shine {
+  0% { transform: rotate(25deg) translateX(-100%); }
+  100% { transform: rotate(25deg) translateX(100%); }
+}
+
+.quote {
+  position: relative;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff33;
+  z-index: 1;
+}
+
+.author {
+  position: relative;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #e0e0e0;
+  margin-bottom: 35px;
+  z-index: 1;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+}
+
+button:hover::before {
+  left: 0;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+
+@keyframes fadeInZoom {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+.quote {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff44;
+}
+
+.quote {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff44;
+  position: relative;
+}
+
+
+.author {
+  font-size: 1rem;
+  font-style: italic;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px #00000055;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+button:hover::before {
+  left: 0;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
